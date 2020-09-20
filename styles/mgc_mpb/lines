@@ -1,0 +1,411 @@
+# General geocache/routing style by Charlie Ferrero
+
+# -------------------------------------------------
+# PREPROCESSING
+# -------------------------------------------------
+# Flag unpaved roads ("avoid unpaved roads" is an option in Mapsource and on Garmin GPSr).
+highway=*
+& (surface=cobblestone | surface=compacted | surface=dirt |
+   surface=earth | surface=grass | surface=grass_paver |
+   surface=gravel | surface=grit | surface=ground | surface=mud |
+   surface=pebblestone | surface=sand | surface=unpaved |
+   mtb:scale=* |
+   tracktype ~ 'grade[2-6]' |
+   smoothness ~ '.*(bad|horrible|impassable)' |
+   sac_scale ~ '.*(mountain|alpine)_hiking' |
+   sport=via_ferrata)
+{ add mkgmap:unpaved=1 }
+(highway=bridleway | highway=path | highway=track | highway=unsurfaced)
+& surface!=* & tracktype!=* & smoothness!=* & sac_scale!=*
+{ add mkgmap:unpaved=1 }
+
+# specially tagged roads...
+construction=*  {add access = no}
+surface=unpaved	{set highway=track; set tracktype=grade1}
+# assume it is some kind of track
+highway=* & access=private {add access=no; add foot=yes}
+
+# Set highway names 
+#		"interstate" // US Interstate
+#		"shield" // US Highway shield
+#		"round" // US Highway round
+#		"hbox" // box with horizontal bands
+#		"box"; // Square box
+#		"oval" // box with rounded end
+highway=motorway  {name '${ref|highway-symbol:round} (${name:zh})'|'${ref|highway-symbol:round} (${name})' | '${ref|highway-symbol:round}' | '${name}' }
+highway=trunk     {name '${ref|highway-symbol:hbox} (${name}/${alt_name})' | '${ref|highway-symbol:hbox} (${name})'| '${ref|highway-symbol:hbox}' | '${name} (${alt_name})' |'${name}'; add display_name = '${name} (${ref})' }
+highway=primary   {name '${ref|highway-symbol:oval} (${name}/${alt_name})' | '${ref|highway-symbol:oval} (${name})'| '${ref|highway-symbol:oval}' | '${name} (${alt_name}/${loc_name})' | '${name} (${alt_name})' | '${name} (${loc_name})' | '${name}'; add display_name = '${ref} (${name})'}
+highway=secondary {name '${name:zh}' | '${name} (${alt_name})' | '${name}'; add display_name = '${name} (${ref})' }
+highway=tertiary  {name '${name:zh}' | '${name} (${alt_name})' | '${name}'}
+
+# Add destination tag if applicable
+(highway=motorway|highway=motorway_link) & destination=* {add display_name = '${ref} (${destination})' }
+(highway=trunk|highway=trunk_link)       & destination=* {add display_name = '${ref} (${destination})' }
+
+# fix tags for simplicity
+oneway=true | oneway=1 {set oneway=yes}
+tunnel=true | tunnel=1 | tunnel=culvert {set tunnel=yes}
+bridge=true | bridge=1 | bridge=viaduct {set bridge=yes}
+causeway=yes {set bridge=yes}
+highway=minor {set highway=unclassified}
+highway=road {set highway=unclassified}
+highway=living_street {set highway=residential}
+highway=bridleway {set highway=byway}
+highway=raceway & name!=*{set highway=track; set name='Racing track'; set access=no}
+highway=raceway {set highway=track; set access=no}
+
+# Convert generic path to most specific
+highway=path & bicycle=designated {set highway=cycleway }
+highway=path & horse=designated {set highway=bridleway }
+highway=path & foot=designated {set highway=footway }
+
+# Handle off-road tracks
+highway=* & smoothness=very_bad {name '${name} (High clearance only)'} 	[0x0a road_class=0 road_speed=2 resolution 22]
+highway=* & smoothness=horrible {name '${name} (4x4 only)'} 	[0x12 road_class=0 road_speed=1 resolution 22]
+highway=* & smoothness=very_horrible {name '${name} (Caution - very rough track!)'}	[0x13 road_class=0 road_speed=1 resolution 22]
+
+# -------------------------------------------------
+# MAIN PROCESSING OF WAYS
+# -------------------------------------------------
+
+# routeable roundabouts
+junction=roundabout & (highway=motorway | highway=motorway_link) {set cfrbout=yes}		[0x0c road_class=4 road_speed=5 resolution 24 continue with_actions] 
+junction=roundabout & (highway=trunk | highway=trunk_link)	{set cfrbout=yes}		[0x0c road_class=3 road_speed=2 resolution 24 continue with_actions]
+junction=roundabout & (highway=primary | highway=primary_link)	{set cfrbout=yes}		[0x0c road_class=3 road_speed=2 resolution 24 continue with_actions]
+junction=roundabout & (highway=secondary | highway=secondary_link) {set cfrbout=yes}		[0x0c road_class=2 road_speed=2 resolution 24 continue with_actions]
+junction=roundabout & (highway=tertiary | highway=tertiary_link)	{set cfrbout=yes}		[0x0c road_class=1 road_speed=1 resolution 24 continue with_actions]
+junction=roundabout & highway=unclassified {set cfrbout=yes}	[0x0c road_class=1 road_speed=1 resolution 24 continue with_actions]
+junction=roundabout & cfrbout!=yes {set cfrbout=yes}			[0x0c road_class=0 road_speed=1 resolution 24 continue with_actions]
+
+
+# !!! - MOTORWAYS - !!!
+#-- routeable motorway
+highway=motorway & cfrbout!=yes & tunnel!=yes{add oneway = yes; add bicycle = no; add foot = no } [0x01 road_class=4 road_speed=7 resolution 24 continue]
+highway=motorway & cfrbout!=yes & tunnel=yes{add oneway = yes; add bicycle = no; add foot = no } [0x10 road_class=4 road_speed=7 resolution 24 continue]
+
+#-- low zoom standard motorway
+highway=motorway								[0x10000 resolution 16-16 continue]
+highway=motorway								[0x10001 resolution 18-18 continue]
+
+#-- high zoom bridges & tunnels
+highway=motorway & tunnel=yes				 	[0x10401 resolution 23-20 continue]
+highway=motorway & tunnel=yes 				 	[0x10402 resolution 24]
+
+highway=motorway & bridge=yes 					[0x10102 resolution 23-23 continue]
+highway=motorway & bridge=yes 					[0x10101 resolution 24 continue]
+
+#-- high zoom standard motorway
+highway=motorway & tunnel!=yes					[0x10001 resolution 23-20 continue]
+highway=motorway & tunnel!=yes					[0x10002 resolution 24]
+
+
+# !!! - MOTORWAY LINKS - !!!
+#-- routeable motorway link
+highway=motorway_link & cfrbout!=yes & tunnel!=yes {add oneway = yes; add bicycle = no; add foot = no } [0x09 road_class=4 road_speed=6 resolution 24 continue]
+highway=motorway_link & cfrbout!=yes & tunnel=yes {add oneway = yes; add bicycle = no; add foot = no } [0x10 road_class=4 road_speed=6 resolution 24 continue]
+#-- low zoom standard motorway link
+highway=motorway_link 							[0x10003 resolution 18-18 continue]
+highway=motorway_link 							[0x10004 resolution 20-20 continue]
+
+#-- high zoom bridges & tunnels
+highway=motorway_link & tunnel=yes				[0x10404 resolution 23-22 continue]
+highway=motorway_link & tunnel=yes				[0x10401 resolution 24]
+
+highway=motorway_link & bridge=yes 				[0x10104 resolution 23-22 continue]
+highway=motorway_link & bridge=yes 				[0x10102 resolution 24 continue]
+
+#-- high zoom standard motorway link
+highway=motorway_link & tunnel!=yes				[0x10004 resolution 23-22 continue]
+highway=motorway_link & tunnel!=yes				[0x10005 resolution 24]
+
+
+# !!! - TRUNK ROADS - !!!
+#-- routeable trunk road
+highway=trunk & cfrbout!=yes & tunnel!=yes		[0x02 road_class=4 road_speed=5 resolution 24 continue]
+highway=trunk & cfrbout!=yes & tunnel=yes		[0x1a road_class=4 road_speed=5 resolution 24 continue]
+#-- low zoom standard trunk 
+highway=trunk 									[0x10006 resolution 18-18 continue]
+highway=trunk									[0x10007 resolution 20-20 continue]
+
+#-- high zoom bridges & tunnels
+highway=trunk & tunnel=yes  			 		[0x10407 resolution 23-22 continue]
+highway=trunk & tunnel=yes  			 		[0x10408 resolution 24]
+
+highway=trunk & bridge=yes 				 		[0x10102 resolution 23-22 continue]
+highway=trunk & bridge=yes					 	[0x10101 resolution 24 continue]
+
+##-- high zoom standard trunk
+highway=trunk & tunnel!=yes						[0x10007 resolution 23-22 continue]
+highway=trunk & tunnel!=yes						[0x10008 resolution 24]
+
+# trunk links
+#-- routing
+highway=trunk_link & cfrbout!=yes				[0x09 road_class=4 road_speed=5 resolution 24 continue]
+#-- bridges & tunnels
+highway=trunk_link & bridge=yes 				[0x10104 resolution 23-22 continue]
+highway=trunk_link & bridge=yes 				[0x10102 resolution 24 continue]
+highway=trunk_link & tunnel=yes  			 	[0x10403 resolution 23-23 continue]
+highway=trunk_link & tunnel=yes  			 	[0x10401 resolution 24 continue]
+
+highway=trunk_link 								[0x1000a resolution 23-20 continue]
+highway=trunk_link 								[0x1000b resolution 24]
+
+# primaries
+#-- routing
+highway=primary & cfrbout!=yes 					[0x03 road_class=3 road_speed=4 resolution 24 continue]
+#-- bridges & tunnels
+highway=primary & bridge=yes 					[0x10102 resolution 23-22 continue]
+highway=primary & bridge=yes 					[0x10101 resolution 24 continue]
+highway=primary & tunnel=yes 				 	[0x10403 resolution 23-23 continue]
+highway=primary & tunnel=yes 				 	[0x10403 resolution 24 continue]
+
+highway=primary 								[0x1000c resolution 20-18 continue]
+highway=primary 								[0x1000d resolution 23-22 continue]
+highway=primary 								[0x1000e resolution 24]
+
+# primary links
+#-- routing
+highway=primary_link & cfrbout!=yes				[0x08 road_class=3 road_speed=3 resolution 24 continue]
+#-- bridges & tunnels
+highway=primary_link & bridge=yes 				[0x10104 resolution 23-22 continue]
+highway=primary_link & bridge=yes 				[0x10102 resolution 24 continue]
+highway=primary_link & tunnel=yes				[0x10403 resolution 23-23 continue]
+highway=primary_link & tunnel=yes				[0x10401 resolution 24 continue]
+
+highway=primary_link 							[0x1000c resolution 23-20 continue]
+highway=primary_link							[0x1000d resolution 24]
+
+# secondaries
+#-- routing
+highway=secondary & cfrbout!=yes				[0x04 road_class=2 road_speed=3 resolution 24 continue]
+#-- bridges & tunnels
+highway=secondary & bridge=yes 					[0x10105 resolution 23-22 continue]
+highway=secondary & bridge=yes 					[0x10103 resolution 24 continue]
+highway=secondary & tunnel=yes 					[0x10404 resolution 23-23 continue]
+highway=secondary & tunnel=yes 					[0x10405 resolution 24 continue]
+
+highway=secondary								[0x1000f resolution 20-20 continue]
+highway=secondary								[0x10010 resolution 23-22 continue]
+highway=secondary								[0x10011 resolution 24]
+
+# secondary links
+#-- routing
+highway=secondary_link & cfrbout!=yes			[0x08 road_class=2 road_speed=2 resolution 24 continue]
+#-- bridges & tunnels
+highway=secondary_link & bridge=yes				[0x10106 resolution 23-22 continue]
+highway=secondary_link & bridge=yes				[0x10105 resolution 24 continue]
+highway=secondary_link & tunnel=yes  			[0x10406 resolution 23-23 continue]
+highway=secondary_link & tunnel=yes  			[0x10407 resolution 24 continue]
+
+highway=secondary_link							[0x10009 resolution 23-22 continue]
+highway=secondary_link 							[0x10010 resolution 24]
+
+# tertiaries
+#-- routing
+highway=tertiary & cfrbout!=yes					[0x05 road_class=1 road_speed=3 resolution 24 continue]
+#-- bridges & tunnels
+highway=tertiary & bridge=yes 					[0x10108 resolution 22-22 continue]
+highway=tertiary & bridge=yes 					[0x10105 resolution 23-23 continue]
+highway=tertiary & bridge=yes 					[0x10103 resolution 24 continue]
+highway=tertiary & tunnel=yes 				 	[0x10404 resolution 23-23 continue]
+highway=tertiary & tunnel=yes 				 	[0x10405 resolution 24 continue]
+
+highway=tertiary								[0x1000f resolution 22-20 continue]
+highway=tertiary								[0x10010 resolution 23-23 continue]
+highway=tertiary								[0x10011 resolution 24]
+
+# tertiary links
+#-- routing
+highway=tertiary_link & cfrbout!=yes			[0x08 road_class=1 road_speed=2 resolution 24 continue]
+#-- bridges & tunnels
+highway=tertiary_link & bridge=yes 				[0x10106 resolution 23-23 continue]
+highway=tertiary_link & bridge=yes 				[0x10105 resolution 24 continue]
+highway=tertiary_link & tunnel=yes 				[0x10406 resolution 23-23 continue]
+highway=tertiary_link & tunnel=yes 				[0x10407 resolution 24 continue]
+
+highway=tertiary_link 							[0x10009 resolution 23-22 continue]
+highway=tertiary_link 							[0x10010 resolution 24]
+
+
+# residential roads
+#-- routing
+highway=residential & cfrbout!=yes				[0x06 road_class=0 road_speed=2 resolution 24 continue]
+#-- bridges & tunnels
+highway=residential & bridge=yes 				[0x10106 resolution 23-23 continue]
+highway=residential & bridge=yes 				[0x10103 resolution 24 continue]
+highway=residential & tunnel=yes				[0x10406 resolution 23-23 continue]
+highway=residential & tunnel=yes				[0x10405 resolution 24 continue]
+
+highway=residential								[0x10015 resolution 22-22 continue]
+highway=residential								[0x10012 resolution 23-23 continue]
+highway=residential & access!=private			[0x10013 resolution 24]
+
+highway=residential & access=private			[0x10013 resolution 24 continue]
+highway=residential & access=private 			[0x1050a resolution 23]
+
+# unclassified roads
+#-- routing
+highway=unclassified & cfrbout!=yes				[0x06 road_class=0 road_speed=3 resolution 24 continue]
+#-- bridges & tunnels
+highway=unclassified & bridge=yes 					[0x10106 resolution 23-23 continue]
+highway=unclassified & bridge=yes 					[0x10103 resolution 24 continue]
+highway=unclassified & tunnel=yes 				 	[0x10406 resolution 23-23 continue]
+highway=unclassified & tunnel=yes 				 	[0x10403 resolution 24 continue]
+#-- access=private
+highway=unclassified & access=private				[0x1050a resolution 23-23 continue]
+highway=unclassified & access=private				[0x1050b resolution 24 continue]
+
+highway=unclassified								[0x10015 resolution 22-22 continue]
+highway=unclassified								[0x10012 resolution 23-23 continue]
+highway=unclassified								[0x10013 resolution 24]
+
+# service 
+#-- routing
+highway=service & cfrbout!=yes						[0x07 road_class=0 road_speed=2 resolution 24 continue]
+#-- bridges & tunnels (nb don't show at 22-22 to keep clutter down)
+highway=service & bridge=yes 						[0x10106 resolution 23 continue]
+highway=service & tunnel=yes 						[0x10406 resolution 23 continue]
+
+highway=service										[0x10015 resolution 22-22 continue]
+highway=service & access!=private					[0x10012 resolution 23]
+highway=service & access=private					[0x10012 resolution 23 continue]
+
+# private road overlay
+highway=service & access=private					[0x1050a resolution 23]
+
+# ------------------------------------------------
+# PATHS
+# ------------------------------------------------
+# tracks
+
+highway=track & cfrbout!=yes							[0x0a road_class=0 road_speed=2 resolution 22]
+
+
+# unsurfaced
+highway=unsurfaced & bridge=yes 						[0x10106 resolution 22 continue]
+highway=unsurfaced & tunnel=yes 						[0x10406 resolution 22 continue]
+highway=unsurfaced & cfrbout!=yes						[0x0a road_class=0 road_speed=1 resolution 22]
+
+# footways
+highway=footway & bridge=yes 							[0x10107 resolution 23 continue]
+highway=footway & tunnel=yes				 			[0x10409 resolution 23 continue]
+highway=footway {add access = no; add foot = yes}		[0x0b road_class=0 road_speed=0 resolution 23]
+
+# cycleways
+highway=cycleway & bridge=yes 							[0x10105 resolution 23 continue]
+highway=cycleway & tunnel=yes 							[0x10409 resolution 23 continue]
+highway=cycleway {add access = no; add bicycle = yes; add foot = yes}[0x0d road_class=0 road_speed=1 resolution 23]
+
+# paths 
+highway=path & bridge=yes  								[0x10107 resolution 23 continue]
+highway=path & tunnel=yes 				 				[0x10409 resolution 23 continue]
+highway=path {add access = no; add bicycle = no; add foot = yes} [0x16 road_class=0 road_speed=1 resolution 23] 
+
+# byways 
+highway=byway & bridge=yes 								[0x10105 resolution 23 continue]
+highway=byway & tunnel=yes  							[0x10405 resolution 23 continue]
+highway=byway 											[0x0e road_class=0 road_speed=0 resolution 23]
+
+# pedestrian streets
+highway=pedestrian & area!=yes & man_made!=yes & bridge=yes	[0x10105 resolution 23 continue]
+highway=pedestrian & area!=yes & man_made!=yes & tunnel=yes	[0x10405 resolution 23 continue]
+highway=pedestrian & area!=yes & man_made!=yes {add access = no; add foot = yes} [0x0f road_class=0 road_speed=0 resolution 23]
+# avoids creating pedestrian lines around pedestrian squares and things like piers
+
+# steps
+highway=steps & bridge=yes 								[0x10105 resolution 24 continue]
+highway=steps & tunnel=yes 								[0x10405 resolution 24 continue]
+highway=steps {add access = no; add foot = yes} 		[0x11 road_class=0 road_speed=0 resolution 24]
+
+leisure=track											[0x0a resolution 22 continue default_name 'Race track']
+
+# Mop up any unrecognised highway & roundabout types
+highway=* & area!=yes [0x06 resolution 23]
+
+# ------------------------------------------------
+# RAILWAYS
+# ------------------------------------------------
+
+#railway=rail & tunnel=* 			[0x10100 resolution 20]
+#railway=light_rail & tunnel=* 		[0x10100 resolution 22]
+#railway=subway [0x14 resolution 22]
+# make railway tunnels a different style, but don't show tube
+
+#railway=rail & bridge=yes [0x117 resolution 22]
+#railway=light_rail & bridge=yes [0x117 resolution 22]
+# can't find a way to show railway bridges nicely
+
+#railway=rail | railway=light_rail | railway=monorail	[0x14 resolution 20]
+#railway=tram 						[0x14 resolution 22]
+# create a different line-style for trams (maybe the default?)
+
+#railway=funicular 					[0x10502 resolution 22]
+
+# ------------------------------------------------
+# ROUTES
+# ------------------------------------------------
+route=ferry 						[0x1b resolution 20]
+
+# ------------------------------------------------
+# WATERWAYS
+# ------------------------------------------------
+#waterway=stream [0x18 resolution 22]
+#waterway=drain 	[0x18 resolution 24]
+#waterway=dam 	[0x19 resolution 23]
+#waterway=canal 	[0x1f resolution 20]
+#waterway=river 	[0x1f resolution 18]
+#waterway=wadi   [0x10505 resolution 22]
+
+# ------------------------------------------------
+# BARRIERS
+# ------------------------------------------------
+natural=cliff { name '${name} cliff' | 'cliff' } 	[0x10501 resolution 22]
+#barrier=wall & sport!=* & landuse!=* & natural!=* & leisure!=*[0x19 resolution 23]
+#barrier=wall | barrier=city_wall {delete name} 		[0x19 resolution 23 continue]
+#man_made=dyke										[0x10506 resolution 24 default_name 'Dyke']
+#barrier=wall | barrier=city_wall					[0x19 resolution 23 continue]
+#barrier=ditch | waterway=ditch						[0x10504 resolution 23 default_name 'Ditch']
+#barrier=fence 				 						[0x26 resolution 23 continue]
+#barrier=hedge 										[0x28 resolution 23 continue]
+#barrier=hedge & sport!=* & landuse!=* & natural!=* & leisure!=*[0x28 resolution 23]
+#barrier=hedge {delete name} [0x28 resolution 23 continue]
+
+# ------------------------------------------------
+# BOUNDARIES
+# ------------------------------------------------
+#natural=coastline [0x10500 resolution 12]
+# The following boundary styles are after the highway rules because ways
+# are frequently tagged with both and we want the highway to take priority.
+# They are also after the coastline rules in case a coastline has been tagged as a boundary
+boundary=administrative { name '${mkgmap:boundary_name}' }
+
+boundary=administrative & admin_level=2 [0x1e resolution 22-12]
+# national boundary 
+boundary=administrative & admin_level=4 [0x1c resolution 22-12]
+# country/regional boundary
+boundary=administrative & admin_level=6 [0x1d resolution 22-12]
+# county boundary
+
+# ------------------------------------------------
+# Non-building areas to pick out
+# ------------------------------------------------
+
+boundary=national_park | leisure=nature_reserve [0x10503 resolution 16 continue]
+building!=yes & (leisure=sports_centre | leisure=sports_center) {name '${name} (${sport})' | '${name}' } [0x1050f resolution 23]
+
+#boundary=political [0x1c resolution 18]
+
+
+# ------------------------------------------------
+# OTHER
+# ------------------------------------------------
+aeroway=runway & bridge=yes										[0x10104 resolution 22 continue]
+aeroway=taxiway & bridge=yes									[0x10104 resolution 22 continue]
+aeroway=runway | aeroway=taxiway 								[0x27 resolution 20]
+
+aerialway=chair_lift 											[0x2b resolution 23]
+aerialway=drag_lift 											[0x10507 resolution 23]
+aerialway=gondola | aerialway=cable_car 						[0x10508 resolution 23]
+
+area!=yes & (man_made=pier | man_made=breakwater | man_made=groyne) 			[0x2a resolution 22 continue]
+#power=line | power=minor_line 									[0x29 resolution 22]

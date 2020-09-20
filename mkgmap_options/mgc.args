@@ -1,0 +1,69 @@
+family-id: 980
+product-id: 1
+series-name: Test Zhejiang Map
+family-name: Test Zhejiang Map
+area-name: Test Zhejiang Map
+max-jobs
+location-autofill:is_in,nearest
+country-name=China
+country-abbr=CHN
+add-pois-to-areas
+add-pois-to-lines
+name-tag-list: name:zh,name,name:en,place_name
+generate-sea: land-tag=natural=background
+draw-priority:25
+code-page=936
+tdbfile
+index
+process-destination
+route
+remove-short-arcs
+adjust-turn-headings:3
+drive-on-right
+reduce-point-density-polygon:7
+merge-lines
+min-size-polygon: 4
+polygon-size-limits=17:2, 15:0
+link-pois-to-ways
+make-opposite-cycleways
+preserve-element-order
+net
+show-profiles:1
+x-split-name-index
+gmapsupp
+housenumbers
+
+# ------------------------------------------------
+# TILE-BY-TILE OPTIONS
+# ------------------------------------------------
+# Following is the list of GCC map tiles
+# If the number of tiles changes, you will need to update this section using template.args that is created by splitter
+# All GCC basemap tiles start at 63247001
+
+overview-mapname: hangzhou_overview
+overview-mapnumber: 63240001
+#Set name of overview file used when installing in MapSource
+mapname: 63240001
+description: CN-Hangzhou
+input-file: ../splitted/63240001.osm.pbf
+
+
+###mapname: 63240001
+###description: CN-Shanghai
+###input-file: ../splitted/63240001.osm.pbf
+###
+###mapname: 63240002
+###description: CN-Wuxi
+###input-file: ../splitted/63240002.osm.pbf
+###
+###mapname: 63240003
+###description: CN-Suzhou
+###input-file: ../splitted/63240003.osm.pbf
+###
+###mapname: 63240004
+###description: CN-Hangzhou
+###input-file: ../splitted/63240004.osm.pbf
+###
+###mapname: 63240005
+###description: CN-Puyang
+###input-file: ../splitted/63240005.osm.pbf

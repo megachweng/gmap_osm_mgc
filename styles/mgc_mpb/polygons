@@ -1,0 +1,209 @@
+
+# General geocache/routing style by Charlie Ferrero
+
+# corrections
+natural=coastline & surface=sand {delete surface}
+building=* & building!=no {set building=yes}
+
+# ------------------------------------------------
+# ADDRESSES
+# ------------------------------------------------
+# cope creatively for different countries
+addr:country=CHN {set mkgmap:region='China'}
+
+# new rules for latest versions of mkgmap
+# first set the country code
+mkgmap:country!=* & addr:country=* { set mkgmap:country='${addr:country}' }
+mkgmap:country!=* & is_in:country=* { set mkgmap:country='${is_in:country}' }
+mkgmap:region!=* & is_in:county=* { set mkgmap:region='${is_in:county}' } 
+mkgmap:city!=* & is_in:city=* { set mkgmap:city='${is_in:city}' }
+mkgmap:city!=* & addr:city=* { set mkgmap:city='${addr:city}' }
+
+mkgmap:postal_code!=* & mkgmap:postcode=* { set mkgmap:postal_code='${mkgmap:postcode}' } 
+mkgmap:postal_code!=* & addr:postcode=* { set mkgmap:postal_code='${addr:postcode}' } 
+
+mkgmap:street!=* & addr:street=* { set mkgmap:street='${addr:street}' }
+mkgmap:street!=* & addr:housename=* { set mkgmap:street='${addr:housename}' }
+
+mkgmap:housenumber!=* & addr:housenumber=* { set mkgmap:housenumber='${addr:housenumber}' }
+
+mkgmap:phone!=* & phone=* { set mkgmap:phone='${phone}' }
+
+mkgmap:is_in!=* & is_in=* { set mkgmap:is_in='${is_in}' }
+
+# copy opening hours to postcode
+opening_hours=* & addr:postcode=* {set addr:postcode = '${addr:postcode} | open ${opening_hours}'}
+opening_hours=* & addr:postcode!=* {set addr:postcode= ' | open ${opening_hours}'}
+
+# fix addresses
+addr:housename=* & addr:street=* {set addr:street= '${addr:housename}, ${addr:street}'}
+addr:full=* {set addr:housename='${addr:full}'; delete addr:street; delete addr:city; delete addr:housenumber}
+
+# set naming
+name!=* & addr:housenumber=* & addr:housename=* {name '${addr:housename} ${addr:housenumber}'}
+name!=* & addr:housename=* {name '${addr:housename}'}
+name!=* & addr:housenumber=* {name '${addr:housenumber}'}
+
+# FORCE SHOWN ON MAP
+waterway=riverbank [0x49 resolution 16-24]
+
+# ------------------------------------------------
+# AGRICULTURE
+# ------------------------------------------------
+landuse=farm | landuse=farmyard | landuse=farmland | landuse=orchard [0x1010b resolution 16-16 continue]
+landuse=farm | landuse=farmyard | landuse=farmland [0x10106 resolution 18]
+ # use a uniform green colour at low zooms, as patterns are unnecessary
+ 
+landuse=allotments [0x37 resolution 20]
+landuse=vineyard [0x52 resolution 20]
+landuse=orchard {name 'Orchard (${trees})' | 'Orchard'} [0x4e resolution 18]
+
+# ------------------------------------------------
+# AIRPORTS
+# ------------------------------------------------
+aeroway=airport [0x07 resolution 20]
+aeroway=aerodrome [0x07 resolution 20]
+aeroway=apron [0x07 resolution 20]
+aeroway=helipad [0x07 resolution 22]
+aeroway=terminal [0x0d resolution 23]
+
+# ------------------------------------------------
+# BUILDINGS
+# ------------------------------------------------
+landuse=commercial | landuse=retail			[0x08 resolution 20]
+landuse=industrial 							[0x0c resolution 16]
+man_made=wastewater_plant					[0x0c resolution 20 default_name 'Wastewater plant']
+man_made=reservoir_covered					[0x0c resolution 23 default_name 'Covered reservoir']
+
+amenity=hospital 							[0x0b resolution 22]
+amenity=university & building=yes			[0x0a resolution 22]
+#need to figure out what happens when this is used to tag an entire campus
+#building=yes & (amenity=college | amenity=school) [0x0a resolution 23 default_name 'College']
+amenity=college | amenity=school			[0x0a resolution 23 default_name 'College']
+
+amenity=marketplace | amenity=supermarket | shop=mall | amenity=food_court | amenity=bank { name '${name}'} [0x09 resolution 23]
+shop=* & building=yes	{ name '${name}'}					[0x09 resolution 22]
+
+highway=pedestrian & area=yes 				[0x12 resolution 23]
+tourism=hotel | tourism=motel { name '${name} (${operator}) (${stars}*)' | '${name} (${stars}*)' | '${operator} (${stars}*)' | '${name}' } 									[0x0f resolution 22]
+tourism=attraction & building=yes	{ name '${name}'}		[0x0d resolution 23]
+tourism=museum & building=yes	{ name '${name}'}		[0x0d resolution 23]
+#power=station 								[0x0d resolution 22]
+
+# ------------------------------------------------
+# GOLF
+# ------------------------------------------------
+#leisure=golf_course | leisure=miniature_golf 	[0x18 resolution 20]
+#golf=bunker										[0x21 resolution 20]
+#golf=water_hazard								[0x3c resolution 20]
+#golf=green										[0x14 resolution 20]
+# ------------------------------------------------
+# LEISURE
+# ------------------------------------------------
+leisure=common | leisure = village_green [0x17 resolution 20] 
+leisure=park | landuse=recreation_ground [0x17 resolution 20]
+leisure=playground [0x10104 resolution 23]
+leisure=garden [0x10103 resolution 20]
+
+leisure=stadium {name '${name} (${sport})' | '${name}' } [0x0d resolution 22 default_name 'Stadium']
+leisure=track & area=yes {name '${name} (${sport})' | '${name}' } [0x19 resolution 22]
+leisure=pitch {name '${name} (${sport})' | '${name}' | '${sport}' } [0x19 resolution 23]
+#leisure=water_park [0x19 resolution 23]
+leisure=ice_rink {name '${name} (${sport})' | '${name}' | '${sport}' } [0x19 resolution 23]
+leisure=swimming | leisure=swimming_pool | sport=swimming | leisure=pool | amenity=swimming_pool [0x3d resolution 23]
+sport=* {name '${name}' |'${name} (${sport})' | '${sport}' } [0x19 resolution 23]
+
+tourism=zoo	{name '${name}'}			[0x17 resolution 20]
+tourism=attraction & historic=* & (area=yes | building=yes) [0x10101 resolution 23]
+
+# ------------------------------------------------
+# MILITARY
+# ------------------------------------------------
+military=airfield [0x04 resolution 20]
+military=barracks [0x04 resolution 18]
+military=danger_area [0x04 resolution 18]
+military=range | landuse=military[0x04 resolution 18]
+
+
+# ------------------------------------------------
+# NATURE
+# ------------------------------------------------
+landuse=forest | landuse=wood | leisure=nature_reserve | landuse=meadow | natural=fell | boundary=national_park | natural=heath | natural=scrub  [0x1010b resolution 16-16 continue]
+ # use a uniform green colour at low zooms, as patterns are unnecessary
+
+landuse=forest & wood=coniferous 		[0x50 resolution 18]
+landuse=forest & wood=deciduous 		[0x10108 resolution 18]
+landuse=forest & (wood=mixed | wood!=*) [0x10109 resolution 18]
+natural=wood & wood=coniferous 			[0x10102 resolution 18]
+natural=wood & wood=deciduous 			[0x10107 resolution 18]
+natural=wood & (wood=mixed | wood!=*)	[0x1010a resolution 18]
+leisure=nature_reserve & name=* {name '${name}'}
+leisure=nature_reserve  [0x16 resolution 18] 
+boundary=national_park 	[0x16 resolution 18]
+natural=beach & natural!=bay [0x1b resolution 20]
+surface=sand  & natural!=bay [0x1b resolution 20]
+natural=heath | natural=scrub [0x4f resolution 18]
+natural=wetland & wetland=mangrove [0x1c resolution 16]
+natural=wetland & wetland=saltmarsh [0x1d resolution 16]
+landuse=meadow | natural=fell [0x25 resolution 18]
+landuse=grass | surface=grass | landuse=meadow [0x14 resolution 20]
+natural=scree [0x53 resolution 16 default_name 'Scree']
+#nb this poly is actually tidal area
+
+
+natural=marsh | natural=wetland [0x51 resolution 16]
+
+# ------------------------------------------------
+# OTHER
+# ------------------------------------------------
+landuse=quarry [0x0c resolution 22]
+landuse=cemetary | landuse=cemetery | amenity=graveyard |amenity=grave_yard [0x1a resolution 23]
+historic=archaeological_site | historic=archeological_site [0x10101 resolution 23]
+amenity=fuel [0x08 resolution 23]
+
+
+# ------------------------------------------------
+# PLACES & MAJOR LANDUSE
+# ------------------------------------------------
+#place=city | place=town [0x02 resolution 16]
+landuse=residential [0x02 resolution 16]
+# nb these and following clash with POI definition
+place=village [0x03 resolution 22]
+#not mapped
+
+# ------------------------------------------------
+# SKIING
+# ------------------------------------------------
+#aerialway=station [0x0d resolution 23]
+
+# ------------------------------------------------
+# WATER
+# ------------------------------------------------
+waterway=riverbank | waterway=dock [0x46 resolution 16-24]
+natural=water [0x3c resolution 16]
+landuse=pond  [0x3c resolution 22]
+landuse=basin [0x3c resolution 22]
+#leisure=marina {name '${name}'} [0x3c resolution 22]
+
+landuse=reservoir [0x3c resolution 20]
+area=yes & (man_made=pier | man_made=breakwater | man_made=groyne) [0x10105 resolution 20]
+type=multipolygon & (man_made=pier | man_made=breakwater | man_made=groyne) [0x10105 resolution 20]
+#these tend to be ways, not polygons so need to be marked with area=yes
+amenity=ferry_terminal [0x0d resolution 23]
+
+natural=glacier	[0x4d resolution 16]
+
+# ------------------------------------------------
+# Catch-alls
+# These catch any new tags that I've not yet added explicit rules for
+# ------------------------------------------------
+#landuse=* 
+building=* & tourism!=* & power!=* [0x0d resolution 22]
+
+# ------------------------------------------------
+# LAND & SEA
+# ------------------------------------------------
+natural=background [0x10100 resolution 12]
+natural=land [0x10100 resolution 12]
+place=island {name '${name}'} [0x10100 resolution 12]
+natural=sea [0x32 resolution 12]
