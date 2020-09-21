@@ -27,9 +27,9 @@ opening_hours=* & addr:postcode!=* {set addr:postcode= ' | open ${opening_hours}
 addr:housename=* & addr:street=* {set addr:street= '${addr:housename}, ${addr:street}'}
 addr:full=* {set addr:housename='${addr:full}'; delete addr:street; delete addr:city; delete addr:housenumber}
 # set naming
-name!=* & addr:housenumber=* & addr:housename=* {name '${addr:housename} ${addr:housenumber}'}
-name!=* & addr:housename=* {name '${addr:housename}'}
-name!=* & addr:housenumber=* {name '${addr:housenumber}'}
+#name!=* & addr:housenumber=* & addr:housename=* {name '${addr:housename} ${addr:housenumber}'}
+#name!=* & addr:housename=* {name '${addr:housename}'}
+#name!=* & addr:housenumber=* {name '${addr:housenumber}'}
 
 
 # ------------------------------------------------
