@@ -6,3 +6,5 @@ bin/*
 splitted/*
 basecamp/*
 product/*
+.DS_Store
+tiles/*
