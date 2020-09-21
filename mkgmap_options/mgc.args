@@ -9,7 +9,7 @@ country-name=China
 country-abbr=CHN
 add-pois-to-areas
 add-pois-to-lines
-name-tag-list: name:zh,name,name:en,place_name
+name-tag-list: name:zh,name,place_name
 generate-sea: land-tag=natural=background
 draw-priority:25
 code-page=65001

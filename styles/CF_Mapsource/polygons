@@ -61,7 +61,7 @@ landuse=farm | landuse=farmyard | landuse=farmland [0x10106 resolution 18]
 # use a uniform green colour at low zooms, as patterns are unnecessary
 landuse=allotments [0x37 resolution 20]
 landuse=vineyard [0x52 resolution 20]
-landuse=orchard {name 'Orchard (${trees})' | 'Orchard'} [0x4e resolution 18]
+landuse=orchard &name=* {name ' ${name}'} [0x4e resolution 18]
 
 
 # ------------------------------------------------
