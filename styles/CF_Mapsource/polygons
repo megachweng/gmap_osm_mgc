@@ -83,7 +83,7 @@ amenity=hospital { name '${name}'}							[0x0b resolution 22]
 amenity=university & building=yes { name '${name}'}			[0x0a resolution 22]
 #need to figure out what happens when this is used to tag an entire campus
 #building=yes & (amenity=college | amenity=school) { name '${name}'} [0x0a resolution 23 default_name 'College']
-amenity=college | amenity=school |amenity=university { name '${name}'}   [0x0a resolution 23 default_name 'College']
+amenity=college | amenity=school |amenity=university { name '${name}'}   [0x0a resolution 23]
 amenity=marketplace | amenity=supermarket | shop=mall | amenity=food_court | amenity=bank { name '${name}'} [0x09 resolution 23]
 shop=* & building=yes	{ name '${name}'}					[0x09 resolution 23]
 highway=pedestrian & area=yes 				[0x12 resolution 23]
@@ -122,7 +122,7 @@ landuse=forest & (wood=mixed | wood!=*) [0x10109 resolution 18]
 natural=wood & wood=coniferous 			[0x10102 resolution 18]
 natural=wood & wood=deciduous 			[0x10107 resolution 18]
 natural=wood                            [0x1010a resolution 18]
-leisure=nature_reserve & name=* {name '${name}'}
+leisure=nature_reserve & name=* {name '${name}'} [0x16 resolution 20]
 leisure=nature_reserve  [0x16 resolution 18] 
 boundary=national_park 	[0x16 resolution 18]
 natural=beach & natural!=bay [0x1b resolution 20]
@@ -134,7 +134,7 @@ natural=scree [0x53 resolution 16 default_name 'Scree']
 #nb this poly is actually tidal area
 #natural=wetland & wetland=mangrove [0x1c resolution 16]
 #natural=wetland & wetland=saltmarsh [0x1d resolution 18]
-natural=wetland & name=* {name '${name}'} [0x51 resolution 18]
+natural=wetland & name=* {name '${name}'} [0x51 resolution 20]
 natural=wetland [0x51 resolution 18]
  
 # ------------------------------------------------

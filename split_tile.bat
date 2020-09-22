@@ -1,5 +1,5 @@
 set pathtosplitter="bin/splitter-r597/splitter.jar"
-set mapfile="pbf/test_riverbank.pbf"
+set mapfile="tiles/test_maincity.pbf"
 set outdir="splitted"
 set resources_dir="resources"
 @echo off

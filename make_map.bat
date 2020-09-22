@@ -15,7 +15,7 @@ IF EXIST "basecamp" (
     del /S /Q basecamp\*
 )
 
-java -DLog.config=logging.properties -Xmx4g -ea -jar %mkgmap% ^
+java -DLog.config=logging.properties -Xmx11g -ea -jar %mkgmap% ^
 --style-file=%stylefile%  ^
 --precomp-sea=%resources_dir%/sea ^
 --bounds=%resources_dir%/bounds ^

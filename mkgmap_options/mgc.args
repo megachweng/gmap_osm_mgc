@@ -1,9 +1,9 @@
 family-id: 980
 product-id: 1
-series-name: Test Zhejiang Map
-family-name: Test Zhejiang Map
-area-name: Test Zhejiang Map
-max-jobs
+series-name: Test Main City Of China
+family-name: Test Main City Of China
+area-name: Test Main City Of China
+max-jobs=4
 location-autofill:is_in,nearest
 country-name=China
 country-abbr=CHN
@@ -32,7 +32,8 @@ show-profiles:1
 x-split-name-index
 gmapsupp
 housenumbers
-
+verbose
+check-styles
 # ------------------------------------------------
 # TILE-BY-TILE OPTIONS
 # ------------------------------------------------
@@ -43,10 +44,120 @@ housenumbers
 #overview-mapname: hangzhou_overview
 #overview-mapnumber: 63240001
 #Set name of overview file used when installing in MapSource
+
 mapname: 63240001
-description: CN-Puyang
+description: CN-Shijiazhuang
 input-file: ../splitted/63240001.osm.pbf
 
 mapname: 63240002
-description: CN-Hangzhou
+description: CN-Taiyuan
 input-file: ../splitted/63240002.osm.pbf
+
+mapname: 63240003
+description: CN-Xi'an
+input-file: ../splitted/63240003.osm.pbf
+
+mapname: 63240004
+description: CN-Zhengzhou
+input-file: ../splitted/63240004.osm.pbf
+
+mapname: 63240005
+description: CN-Handan
+input-file: ../splitted/63240005.osm.pbf
+
+mapname: 63240006
+description: CN-Qingdao
+input-file: ../splitted/63240006.osm.pbf
+
+mapname: 63240007
+description: CN-Jinan
+input-file: ../splitted/63240007.osm.pbf
+
+mapname: 63240008
+description: CN-Tai'an
+input-file: ../splitted/63240008.osm.pbf
+
+mapname: 63240009
+description: CN-Shenyang
+input-file: ../splitted/63240009.osm.pbf
+
+mapname: 63240010
+description: CN-Dalian
+input-file: ../splitted/63240010.osm.pbf
+
+mapname: 63240011
+description: CN-Tianjin
+input-file: ../splitted/63240011.osm.pbf
+
+mapname: 63240012
+description: CN-Beijing
+input-file: ../splitted/63240012.osm.pbf
+
+mapname: 63240013
+description: CN-Shiyan
+input-file: ../splitted/63240013.osm.pbf
+
+mapname: 63240014
+description: CN-Wuhan
+input-file: ../splitted/63240014.osm.pbf
+
+mapname: 63240015
+description: CN-Fenghuang
+input-file: ../splitted/63240015.osm.pbf
+
+mapname: 63240016
+description: CN-Changsha
+input-file: ../splitted/63240016.osm.pbf
+
+mapname: 63240017
+description: CN-Hengyang
+input-file: ../splitted/63240017.osm.pbf
+
+mapname: 63240018
+description: CN-Shangrao
+input-file: ../splitted/63240018.osm.pbf
+
+mapname: 63240019
+description: CN-Nanchang
+input-file: ../splitted/63240019.osm.pbf
+
+mapname: 63240020
+description: CN-Hefei
+input-file: ../splitted/63240020.osm.pbf
+
+mapname: 63240021
+description: CN-Huangshi
+input-file: ../splitted/63240021.osm.pbf
+
+mapname: 63240022
+description: CN-Ningbo
+input-file: ../splitted/63240022.osm.pbf
+
+mapname: 63240023
+description: CN-Fuzhou
+input-file: ../splitted/63240023.osm.pbf
+
+mapname: 63240024
+description: CN-Puyang
+input-file: ../splitted/63240024.osm.pbf
+
+mapname: 63240025
+description: CN-Changzhou
+input-file: ../splitted/63240025.osm.pbf
+
+mapname: 63240026
+description: CN-Nanjing
+input-file: ../splitted/63240026.osm.pbf
+
+mapname: 63240027
+description: CN-Wuxi
+input-file: ../splitted/63240027.osm.pbf
+
+mapname: 63240028
+description: CN-Shanghai
+input-file: ../splitted/63240028.osm.pbf
+
+mapname: 63240029
+description: CN-Hangzhou
+input-file: ../splitted/63240029.osm.pbf
+
