@@ -1,0 +1,681 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <bounds minlat='80.319' minlon='93.6981' maxlat='80.953' maxlon='98.4273' origin='osmconvert 0.8.10' />
+  <node id='-101903' action='modify' visible='true' lat='80.31975437043' lon='98.42394686598' />
+  <node id='-101904' action='modify' visible='true' lat='80.31902706142' lon='93.6981366037' />
+  <node id='-101905' action='modify' visible='true' lat='80.95306271845' lon='93.70024641469' />
+  <node id='-101906' action='modify' visible='true' lat='80.95304053684' lon='98.40572909648' />
+  <node id='-101912' action='modify' visible='true' lat='80.90864713966' lon='93.9521860131' />
+  <node id='-101913' action='modify' visible='true' lat='80.90864602975' lon='94.19130206351' />
+  <node id='-101914' action='modify' visible='true' lat='80.87243361194' lon='94.1912953443' />
+  <node id='-101915' action='modify' visible='true' lat='80.87243472624' lon='93.95217929389' />
+  <node id='-101922' action='modify' visible='true' lat='80.90811594741' lon='94.44015347338' />
+  <node id='-101923' action='modify' visible='true' lat='80.90811481243' lon='94.68465565488' />
+  <node id='-101924' action='modify' visible='true' lat='80.87194303218' lon='94.68464894357' />
+  <node id='-101925' action='modify' visible='true' lat='80.87194417164' lon='94.44014676208' />
+  <node id='-101930' action='modify' visible='true' lat='80.90877193079' lon='94.90184495228' />
+  <node id='-101931' action='modify' visible='true' lat='80.90877082089' lon='95.1409621218' />
+  <node id='-101932' action='modify' visible='true' lat='80.87265193791' lon='95.14095541981' />
+  <node id='-101933' action='modify' visible='true' lat='80.87265305219' lon='94.90183825029' />
+  <node id='-101962' action='modify' visible='true' lat='80.90879651002' lon='95.34174873657' />
+  <node id='-101963' action='modify' visible='true' lat='80.90879540011' lon='95.58086591727' />
+  <node id='-101964' action='modify' visible='true' lat='80.87272495672' lon='95.58085922423' />
+  <node id='-101965' action='modify' visible='true' lat='80.87272607099' lon='95.34174204354' />
+  <node id='-101970' action='modify' visible='true' lat='80.87322698514' lon='96.030123295' />
+  <node id='-101971' action='modify' visible='true' lat='80.90723754427' lon='96.03012960545' />
+  <node id='-101972' action='modify' visible='true' lat='80.90723869416' lon='95.78243991717' />
+  <node id='-101973' action='modify' visible='true' lat='80.87322813929' lon='95.78243360672' />
+  <node id='-101995' action='modify' visible='true' lat='80.87669218354' lon='98.0216757286' />
+  <node id='-101996' action='modify' visible='true' lat='80.87188992354' lon='97.4099682976' />
+  <node id='-101997' action='modify' visible='true' lat='80.90566328384' lon='96.25164581222' />
+  <node id='-101998' action='modify' visible='true' lat='80.87670095058' lon='98.2607930674' />
+  <node id='-101999' action='modify' visible='true' lat='80.90772678057' lon='97.40997322955' />
+  <node id='-102000' action='modify' visible='true' lat='80.87110120804' lon='96.7173850158' />
+  <node id='-102001' action='modify' visible='true' lat='80.87175248224' lon='97.63061274791' />
+  <node id='-102002' action='modify' visible='true' lat='80.90566217356' lon='96.49076299442' />
+  <node id='-102003' action='modify' visible='true' lat='80.91287751838' lon='98.26074020587' />
+  <node id='-102004' action='modify' visible='true' lat='80.90772760395' lon='97.17085605952' />
+  <node id='-102005' action='modify' visible='true' lat='80.87110104643' lon='96.9565021879' />
+  <node id='-102006' action='modify' visible='true' lat='80.87175147828' lon='97.86972991738' />
+  <node id='-102007' action='modify' visible='true' lat='80.87132132286' lon='96.4907566239' />
+  <node id='-102008' action='modify' visible='true' lat='80.9128687858' lon='98.02162286708' />
+  <node id='-102009' action='modify' visible='true' lat='80.9056948234' lon='96.95650311847' />
+  <node id='-102010' action='modify' visible='true' lat='80.90792844794' lon='97.86973596438' />
+  <node id='-102011' action='modify' visible='true' lat='80.87189075013' lon='97.17085112758' />
+  <node id='-102012' action='modify' visible='true' lat='80.9056949844' lon='96.71738594637' />
+  <node id='-102013' action='modify' visible='true' lat='80.90792944795' lon='97.63061879491' />
+  <node id='-102014' action='modify' visible='true' lat='80.8713224373' lon='96.25163944169' />
+  <node id='-102055' action='modify' visible='true' lat='80.57866830281' lon='94.37903556411' />
+  <node id='-102056' action='modify' visible='true' lat='80.59797531466' lon='94.99949005157' />
+  <node id='-102057' action='modify' visible='true' lat='80.59820412589' lon='95.154341793' />
+  <node id='-102058' action='modify' visible='true' lat='80.59826141368' lon='94.84428866911' />
+  <node id='-102059' action='modify' visible='true' lat='80.59820412589' lon='95.2818661795' />
+  <node id='-102060' action='modify' visible='true' lat='80.59808966373' lon='95.58806484379' />
+  <node id='-102061' action='modify' visible='true' lat='80.59849021801' lon='94.81275861489' />
+  <node id='-102062' action='modify' visible='true' lat='80.57855360496' lon='94.52758045387' />
+  <node id='-102063' action='modify' visible='true' lat='80.59860467533' lon='94.5065599506' />
+  <node id='-102064' action='modify' visible='true' lat='80.57815220895' lon='95.46054045729' />
+  <node id='-102065' action='modify' visible='true' lat='80.57843902043' lon='94.35170820917' />
+  <node id='-102066' action='modify' visible='true' lat='80.57803761958' lon='95.12701443807' />
+  <node id='-102067' action='modify' visible='true' lat='80.57832431982' lon='94.9718130556' />
+  <node id='-102068' action='modify' visible='true' lat='80.57803761958' lon='94.99949005157' />
+  <node id='-102069' action='modify' visible='true' lat='80.59786084975' lon='95.619594898' />
+  <node id='-102070' action='modify' visible='true' lat='80.59849021801' lon='94.65510484037' />
+  <node id='-102071' action='modify' visible='true' lat='80.57792291412' lon='95.619594898' />
+  <node id='-102072' action='modify' visible='true' lat='80.59808966373' lon='95.43041106927' />
+  <node id='-102073' action='modify' visible='true' lat='80.59837587376' lon='94.22418382268' />
+  <node id='-102074' action='modify' visible='true' lat='80.57832431982' lon='94.84428866911' />
+  <node id='-102075' action='modify' visible='true' lat='80.59808966373' lon='95.46054045729' />
+  <node id='-102076' action='modify' visible='true' lat='80.57815220895' lon='95.30288668277' />
+  <node id='-102077' action='modify' visible='true' lat='80.57855360496' lon='94.81275861489' />
+  <node id='-102078' action='modify' visible='true' lat='80.57826691164' lon='95.154341793' />
+  <node id='-102079' action='modify' visible='true' lat='80.57866830281' lon='94.5065599506' />
+  <node id='-102080' action='modify' visible='true' lat='80.59808966373' lon='95.30288668277' />
+  <node id='-102081' action='modify' visible='true' lat='80.57843902043' lon='94.22418382268' />
+  <node id='-102082' action='modify' visible='true' lat='80.57792291412' lon='95.7471192845' />
+  <node id='-102083' action='modify' visible='true' lat='80.59826141368' lon='94.9718130556' />
+  <node id='-102084' action='modify' visible='true' lat='80.59786084975' lon='95.7471192845' />
+  <node id='-102085' action='modify' visible='true' lat='80.57826691164' lon='95.2818661795' />
+  <node id='-102086' action='modify' visible='true' lat='80.59849021801' lon='94.68523422839' />
+  <node id='-102087' action='modify' visible='true' lat='80.57855360496' lon='94.65510484037' />
+  <node id='-102088' action='modify' visible='true' lat='80.59860467533' lon='94.37903556411' />
+  <node id='-102089' action='modify' visible='true' lat='80.59797531466' lon='95.12701443807' />
+  <node id='-102090' action='modify' visible='true' lat='80.59837587376' lon='94.35170820917' />
+  <node id='-102091' action='modify' visible='true' lat='80.57815220895' lon='95.43041106927' />
+  <node id='-102092' action='modify' visible='true' lat='80.57855360496' lon='94.68523422839' />
+  <node id='-102093' action='modify' visible='true' lat='80.57815220895' lon='95.58806484379' />
+  <node id='-102094' action='modify' visible='true' lat='80.59849021801' lon='94.52758045387' />
+  <node id='-102135' action='modify' visible='true' lat='80.53212081774' lon='94.3548939332' />
+  <node id='-102136' action='modify' visible='true' lat='80.55152235374' lon='94.97534842067' />
+  <node id='-102137' action='modify' visible='true' lat='80.55175228523' lon='95.1302001621' />
+  <node id='-102138' action='modify' visible='true' lat='80.5518098535' lon='94.8201470382' />
+  <node id='-102139' action='modify' visible='true' lat='80.55175228523' lon='95.2577245486' />
+  <node id='-102140' action='modify' visible='true' lat='80.55163726267' lon='95.56392321288' />
+  <node id='-102141' action='modify' visible='true' lat='80.55203977805' lon='94.78861698399' />
+  <node id='-102142' action='modify' visible='true' lat='80.53200555836' lon='94.50343882297' />
+  <node id='-102143' action='modify' visible='true' lat='80.55215479575' lon='94.4824183197' />
+  <node id='-102144' action='modify' visible='true' lat='80.53160219723' lon='95.43639882639' />
+  <node id='-102145' action='modify' visible='true' lat='80.53189041286' lon='94.32756657827' />
+  <node id='-102146' action='modify' visible='true' lat='80.53148704687' lon='95.10287280717' />
+  <node id='-102147' action='modify' visible='true' lat='80.5317751507' lon='94.9476714247' />
+  <node id='-102148' action='modify' visible='true' lat='80.53148704687' lon='94.97534842067' />
+  <node id='-102149' action='modify' visible='true' lat='80.55140732841' lon='95.5954532671' />
+  <node id='-102150' action='modify' visible='true' lat='80.55203977805' lon='94.63096320947' />
+  <node id='-102151' action='modify' visible='true' lat='80.53137177985' lon='95.5954532671' />
+  <node id='-102152' action='modify' visible='true' lat='80.55163726267' lon='95.40626943837' />
+  <node id='-102153' action='modify' visible='true' lat='80.55192487397' lon='94.20004219177' />
+  <node id='-102154' action='modify' visible='true' lat='80.5317751507' lon='94.8201470382' />
+  <node id='-102155' action='modify' visible='true' lat='80.55163726267' lon='95.43639882639' />
+  <node id='-102156' action='modify' visible='true' lat='80.53160219723' lon='95.27874505187' />
+  <node id='-102157' action='modify' visible='true' lat='80.53200555836' lon='94.78861698399' />
+  <node id='-102158' action='modify' visible='true' lat='80.53171746147' lon='95.1302001621' />
+  <node id='-102159' action='modify' visible='true' lat='80.53212081774' lon='94.4824183197' />
+  <node id='-102160' action='modify' visible='true' lat='80.55163726267' lon='95.27874505187' />
+  <node id='-102161' action='modify' visible='true' lat='80.53189041286' lon='94.20004219177' />
+  <node id='-102162' action='modify' visible='true' lat='80.53137177985' lon='95.7229776536' />
+  <node id='-102163' action='modify' visible='true' lat='80.5518098535' lon='94.9476714247' />
+  <node id='-102164' action='modify' visible='true' lat='80.55140732841' lon='95.7229776536' />
+  <node id='-102165' action='modify' visible='true' lat='80.53171746147' lon='95.2577245486' />
+  <node id='-102166' action='modify' visible='true' lat='80.55203977805' lon='94.66109259749' />
+  <node id='-102167' action='modify' visible='true' lat='80.53200555836' lon='94.63096320947' />
+  <node id='-102168' action='modify' visible='true' lat='80.55215479575' lon='94.3548939332' />
+  <node id='-102169' action='modify' visible='true' lat='80.55152235374' lon='95.10287280717' />
+  <node id='-102170' action='modify' visible='true' lat='80.55192487397' lon='94.32756657827' />
+  <node id='-102171' action='modify' visible='true' lat='80.53160219723' lon='95.40626943837' />
+  <node id='-102172' action='modify' visible='true' lat='80.53200555836' lon='94.66109259749' />
+  <node id='-102173' action='modify' visible='true' lat='80.53160219723' lon='95.56392321288' />
+  <node id='-102174' action='modify' visible='true' lat='80.55203977805' lon='94.50343882297' />
+  <node id='-102215' action='modify' visible='true' lat='80.48734056212' lon='94.3548939332' />
+  <node id='-102216' action='modify' visible='true' lat='80.50683302151' lon='94.97534842067' />
+  <node id='-102217' action='modify' visible='true' lat='80.50706403058' lon='95.1302001621' />
+  <node id='-102218' action='modify' visible='true' lat='80.50712186864' lon='94.8201470382' />
+  <node id='-102219' action='modify' visible='true' lat='80.50706403058' lon='95.2577245486' />
+  <node id='-102220' action='modify' visible='true' lat='80.50694846896' lon='95.56392321288' />
+  <node id='-102221' action='modify' visible='true' lat='80.50735287074' lon='94.78861698399' />
+  <node id='-102222' action='modify' visible='true' lat='80.4872247626' lon='94.50343882297' />
+  <node id='-102223' action='modify' visible='true' lat='80.50746842748' lon='94.4824183197' />
+  <node id='-102224' action='modify' visible='true' lat='80.48681951122' lon='95.43639882639' />
+  <node id='-102225' action='modify' visible='true' lat='80.48710907749' lon='94.32756657827' />
+  <node id='-102226' action='modify' visible='true' lat='80.48670382123' lon='95.10287280717' />
+  <node id='-102227' action='modify' visible='true' lat='80.48699327519' lon='94.9476714247' />
+  <node id='-102228' action='modify' visible='true' lat='80.48670382123' lon='94.97534842067' />
+  <node id='-102229' action='modify' visible='true' lat='80.50671745711' lon='95.5954532671' />
+  <node id='-102230' action='modify' visible='true' lat='80.50735287074' lon='94.63096320947' />
+  <node id='-102231' action='modify' visible='true' lat='80.48658801404' lon='95.5954532671' />
+  <node id='-102232' action='modify' visible='true' lat='80.50694846896' lon='95.40626943837' />
+  <node id='-102233' action='modify' visible='true' lat='80.50723742817' lon='94.20004219177' />
+  <node id='-102234' action='modify' visible='true' lat='80.48699327519' lon='94.8201470382' />
+  <node id='-102235' action='modify' visible='true' lat='80.50694846896' lon='95.43639882639' />
+  <node id='-102236' action='modify' visible='true' lat='80.48681951122' lon='95.27874505187' />
+  <node id='-102237' action='modify' visible='true' lat='80.4872247626' lon='94.78861698399' />
+  <node id='-102238' action='modify' visible='true' lat='80.48693531562' lon='95.1302001621' />
+  <node id='-102239' action='modify' visible='true' lat='80.48734056212' lon='94.4824183197' />
+  <node id='-102240' action='modify' visible='true' lat='80.50694846896' lon='95.27874505187' />
+  <node id='-102241' action='modify' visible='true' lat='80.48710907749' lon='94.20004219177' />
+  <node id='-102242' action='modify' visible='true' lat='80.48658801404' lon='95.7229776536' />
+  <node id='-102243' action='modify' visible='true' lat='80.50712186864' lon='94.9476714247' />
+  <node id='-102244' action='modify' visible='true' lat='80.50671745711' lon='95.7229776536' />
+  <node id='-102245' action='modify' visible='true' lat='80.48693531562' lon='95.2577245486' />
+  <node id='-102246' action='modify' visible='true' lat='80.50735287074' lon='94.66109259749' />
+  <node id='-102247' action='modify' visible='true' lat='80.4872247626' lon='94.63096320947' />
+  <node id='-102248' action='modify' visible='true' lat='80.50746842748' lon='94.3548939332' />
+  <node id='-102249' action='modify' visible='true' lat='80.50683302151' lon='95.10287280717' />
+  <node id='-102250' action='modify' visible='true' lat='80.50723742817' lon='94.32756657827' />
+  <node id='-102251' action='modify' visible='true' lat='80.48681951122' lon='95.40626943837' />
+  <node id='-102252' action='modify' visible='true' lat='80.4872247626' lon='94.66109259749' />
+  <node id='-102253' action='modify' visible='true' lat='80.48681951122' lon='95.56392321288' />
+  <node id='-102254' action='modify' visible='true' lat='80.50735287074' lon='94.50343882297' />
+  <node id='-102295' action='modify' visible='true' lat='80.44134829745' lon='94.34282311775' />
+  <node id='-102296' action='modify' visible='true' lat='80.46093412879' lon='94.96327760522' />
+  <node id='-102297' action='modify' visible='true' lat='80.46116624446' lon='95.11812934665' />
+  <node id='-102298' action='modify' visible='true' lat='80.46122435959' lon='94.80807622275' />
+  <node id='-102299' action='modify' visible='true' lat='80.46116624446' lon='95.24565373315' />
+  <node id='-102300' action='modify' visible='true' lat='80.46105012926' lon='95.55185239743' />
+  <node id='-102301' action='modify' visible='true' lat='80.46145646826' lon='94.77654616853' />
+  <node id='-102302' action='modify' visible='true' lat='80.44123194327' lon='94.49136800752' />
+  <node id='-102303' action='modify' visible='true' lat='80.46157257855' lon='94.47034750425' />
+  <node id='-102304' action='modify' visible='true' lat='80.44082475072' lon='95.42432801094' />
+  <node id='-102305' action='modify' visible='true' lat='80.44111570402' lon='94.31549576282' />
+  <node id='-102306' action='modify' visible='true' lat='80.44070850657' lon='95.09080199172' />
+  <node id='-102307' action='modify' visible='true' lat='80.44099934702' lon='94.93560060925' />
+  <node id='-102308' action='modify' visible='true' lat='80.44070850657' lon='94.96327760522' />
+  <node id='-102309' action='modify' visible='true' lat='80.46081801079' lon='95.58338245165' />
+  <node id='-102310' action='modify' visible='true' lat='80.46145646826' lon='94.61889239402' />
+  <node id='-102311' action='modify' visible='true' lat='80.44059214466' lon='95.58338245165' />
+  <node id='-102312' action='modify' visible='true' lat='80.46105012926' lon='95.39419862292' />
+  <node id='-102313' action='modify' visible='true' lat='80.46134047268' lon='94.18797137632' />
+  <node id='-102314' action='modify' visible='true' lat='80.44099934702' lon='94.80807622275' />
+  <node id='-102315' action='modify' visible='true' lat='80.46105012926' lon='95.42432801094' />
+  <node id='-102316' action='modify' visible='true' lat='80.44082475072' lon='95.26667423642' />
+  <node id='-102317' action='modify' visible='true' lat='80.44123194327' lon='94.77654616853' />
+  <node id='-102318' action='modify' visible='true' lat='80.44094110982' lon='95.11812934665' />
+  <node id='-102319' action='modify' visible='true' lat='80.44134829745' lon='94.47034750425' />
+  <node id='-102320' action='modify' visible='true' lat='80.46105012926' lon='95.26667423642' />
+  <node id='-102321' action='modify' visible='true' lat='80.44111570402' lon='94.18797137632' />
+  <node id='-102322' action='modify' visible='true' lat='80.44059214466' lon='95.71090683815' />
+  <node id='-102323' action='modify' visible='true' lat='80.46122435959' lon='94.93560060925' />
+  <node id='-102324' action='modify' visible='true' lat='80.46081801079' lon='95.71090683815' />
+  <node id='-102325' action='modify' visible='true' lat='80.44094110982' lon='95.24565373315' />
+  <node id='-102326' action='modify' visible='true' lat='80.46145646826' lon='94.64902178204' />
+  <node id='-102327' action='modify' visible='true' lat='80.44123194327' lon='94.61889239402' />
+  <node id='-102328' action='modify' visible='true' lat='80.46157257855' lon='94.34282311775' />
+  <node id='-102329' action='modify' visible='true' lat='80.46093412879' lon='95.09080199172' />
+  <node id='-102330' action='modify' visible='true' lat='80.46134047268' lon='94.31549576282' />
+  <node id='-102331' action='modify' visible='true' lat='80.44082475072' lon='95.39419862292' />
+  <node id='-102332' action='modify' visible='true' lat='80.44123194327' lon='94.64902178204' />
+  <node id='-102333' action='modify' visible='true' lat='80.44082475072' lon='95.55185239743' />
+  <node id='-102334' action='modify' visible='true' lat='80.46145646826' lon='94.49136800752' />
+  <node id='-102348' action='modify' visible='true' lat='80.40425966983' lon='94.31225200208' />
+  <node id='-102349' action='modify' visible='true' lat='80.42456169206' lon='94.18472761558' />
+  <node id='-102350' action='modify' visible='true' lat='80.42456169206' lon='94.31225200208' />
+  <node id='-102351' action='modify' visible='true' lat='80.40425966983' lon='94.18472761558' />
+  <node id='-102353' action='modify' visible='true' lat='80.89766063034' lon='93.70005302649' />
+  <way id='-101908' action='modify' visible='true'>
+    <nd ref='-101903' />
+    <nd ref='-101904' />
+    <nd ref='-102353' />
+    <nd ref='-101905' />
+    <nd ref='-101906' />
+    <nd ref='-101903' />
+    <tag k='boundary' v='administrative' />
+  </way>
+  <way id='-102550' action='modify' visible='true'>
+    <nd ref='-101912' />
+    <nd ref='-101913' />
+    <nd ref='-101914' />
+    <nd ref='-101915' />
+    <nd ref='-101912' />
+    <tag k='code' v='0x01' />
+    <tag k='name' v='0x01 -- City' />
+  </way>
+  <way id='-102588' action='modify' visible='true'>
+    <nd ref='-101922' />
+    <nd ref='-101923' />
+    <nd ref='-101924' />
+    <nd ref='-101925' />
+    <nd ref='-101922' />
+    <tag k='code' v='0x02' />
+    <tag k='name' v='0x02 -- City' />
+  </way>
+  <way id='-102590' action='modify' visible='true'>
+    <nd ref='-101930' />
+    <nd ref='-101931' />
+    <nd ref='-101932' />
+    <nd ref='-101933' />
+    <nd ref='-101930' />
+    <tag k='code' v='0x03' />
+    <tag k='name' v='0x03 -- City' />
+  </way>
+  <way id='-102598' action='modify' visible='true'>
+    <nd ref='-101962' />
+    <nd ref='-101963' />
+    <nd ref='-101964' />
+    <nd ref='-101965' />
+    <nd ref='-101962' />
+    <tag k='code' v='0x04' />
+    <tag k='name' v='0x04 -- Military' />
+  </way>
+  <way id='-102600' action='modify' visible='true'>
+    <nd ref='-101972' />
+    <nd ref='-101971' />
+    <nd ref='-101970' />
+    <nd ref='-101973' />
+    <nd ref='-101972' />
+    <tag k='code' v='0x05' />
+    <tag k='name' v='0x05 -- Car Park (Parking Lot)' />
+  </way>
+  <way id='-102607' action='modify' visible='true'>
+    <nd ref='-101997' />
+    <nd ref='-102002' />
+    <nd ref='-102007' />
+    <nd ref='-102014' />
+    <nd ref='-101997' />
+    <tag k='code' v='0x06' />
+    <tag k='name' v='0x06 -- Parking Garage' />
+  </way>
+  <way id='-102608' action='modify' visible='true'>
+    <nd ref='-102012' />
+    <nd ref='-102009' />
+    <nd ref='-102005' />
+    <nd ref='-102000' />
+    <nd ref='-102012' />
+    <tag k='code' v='0x07' />
+    <tag k='name' v='0x07 -- Airport' />
+  </way>
+  <way id='-102609' action='modify' visible='true'>
+    <nd ref='-102004' />
+    <nd ref='-101999' />
+    <nd ref='-101996' />
+    <nd ref='-102011' />
+    <nd ref='-102004' />
+    <tag k='code' v='0x08' />
+    <tag k='name' v='0x08 -- Shopping Centre' />
+  </way>
+  <way id='-102610' action='modify' visible='true'>
+    <nd ref='-102013' />
+    <nd ref='-102010' />
+    <nd ref='-102006' />
+    <nd ref='-102001' />
+    <nd ref='-102013' />
+    <tag k='code' v='0x09' />
+    <tag k='name' v='0x09 -- Marina' />
+  </way>
+  <way id='-102611' action='modify' visible='true'>
+    <nd ref='-102008' />
+    <nd ref='-102003' />
+    <nd ref='-101998' />
+    <nd ref='-101995' />
+    <nd ref='-102008' />
+    <tag k='code' v='0x0a' />
+    <tag k='name' v='0x0a -- University' />
+  </way>
+  <way id='-102622' action='modify' visible='true'>
+    <nd ref='-102094' />
+    <nd ref='-102070' />
+    <nd ref='-102087' />
+    <nd ref='-102062' />
+    <nd ref='-102094' />
+    <tag k='code' v='0x0b' />
+    <tag k='name' v='0x0b -- Hospital' />
+  </way>
+  <way id='-102623' action='modify' visible='true'>
+    <nd ref='-102075' />
+    <nd ref='-102060' />
+    <nd ref='-102093' />
+    <nd ref='-102064' />
+    <nd ref='-102075' />
+    <tag k='code' v='0x0c' />
+    <tag k='name' v='0x0c -- Industrial' />
+  </way>
+  <way id='-102624' action='modify' visible='true'>
+    <nd ref='-102080' />
+    <nd ref='-102072' />
+    <nd ref='-102091' />
+    <nd ref='-102076' />
+    <nd ref='-102080' />
+    <tag k='code' v='0x0d' />
+    <tag k='name' v='0x0d -- Reservation' />
+  </way>
+  <way id='-102625' action='modify' visible='true'>
+    <nd ref='-102088' />
+    <nd ref='-102063' />
+    <nd ref='-102079' />
+    <nd ref='-102055' />
+    <nd ref='-102088' />
+    <tag k='code' v='0x0e' />
+    <tag k='name' v='0x0e -- Airport Runway' />
+  </way>
+  <way id='-102626' action='modify' visible='true'>
+    <nd ref='-102058' />
+    <nd ref='-102083' />
+    <nd ref='-102067' />
+    <nd ref='-102074' />
+    <nd ref='-102058' />
+    <tag k='code' v='0x13' />
+    <tag k='name' v='0x13 -- Man made area' />
+  </way>
+  <way id='-102627' action='modify' visible='true'>
+    <nd ref='-102056' />
+    <nd ref='-102089' />
+    <nd ref='-102066' />
+    <nd ref='-102068' />
+    <nd ref='-102056' />
+    <tag k='code' v='0x14' />
+    <tag k='name' v='0x14 -- National park' />
+  </way>
+  <way id='-102628' action='modify' visible='true'>
+    <nd ref='-102086' />
+    <nd ref='-102061' />
+    <nd ref='-102077' />
+    <nd ref='-102092' />
+    <nd ref='-102086' />
+    <tag k='code' v='0x15' />
+    <tag k='name' v='0x15 -- National park' />
+  </way>
+  <way id='-102629' action='modify' visible='true'>
+    <nd ref='-102073' />
+    <nd ref='-102090' />
+    <nd ref='-102065' />
+    <nd ref='-102081' />
+    <nd ref='-102073' />
+    <tag k='code' v='0x16' />
+    <tag k='name' v='0x16 -- National park' />
+  </way>
+  <way id='-102630' action='modify' visible='true'>
+    <nd ref='-102069' />
+    <nd ref='-102084' />
+    <nd ref='-102082' />
+    <nd ref='-102071' />
+    <nd ref='-102069' />
+    <tag k='code' v='0x17' />
+    <tag k='name' v='0x17 -- City Park' />
+  </way>
+  <way id='-102631' action='modify' visible='true'>
+    <nd ref='-102057' />
+    <nd ref='-102059' />
+    <nd ref='-102085' />
+    <nd ref='-102078' />
+    <nd ref='-102057' />
+    <tag k='code' v='0x18' />
+    <tag k='name' v='0x18 -- Golf' />
+  </way>
+  <way id='-102642' action='modify' visible='true'>
+    <nd ref='-102174' />
+    <nd ref='-102150' />
+    <nd ref='-102167' />
+    <nd ref='-102142' />
+    <nd ref='-102174' />
+    <tag k='code' v='0x19' />
+    <tag k='name' v='0x19 -- Sport' />
+  </way>
+  <way id='-102643' action='modify' visible='true'>
+    <nd ref='-102155' />
+    <nd ref='-102140' />
+    <nd ref='-102173' />
+    <nd ref='-102144' />
+    <nd ref='-102155' />
+    <tag k='code' v='0x1a' />
+    <tag k='name' v='0x1a -- Cemetery' />
+  </way>
+  <way id='-102644' action='modify' visible='true'>
+    <nd ref='-102160' />
+    <nd ref='-102152' />
+    <nd ref='-102171' />
+    <nd ref='-102156' />
+    <nd ref='-102160' />
+    <tag k='code' v='0x1e' />
+    <tag k='name' v='0x1e -- State Park' />
+  </way>
+  <way id='-102645' action='modify' visible='true'>
+    <nd ref='-102168' />
+    <nd ref='-102143' />
+    <nd ref='-102159' />
+    <nd ref='-102135' />
+    <nd ref='-102168' />
+    <tag k='code' v='0x1f' />
+    <tag k='name' v='0x1f -- State Park' />
+  </way>
+  <way id='-102646' action='modify' visible='true'>
+    <nd ref='-102138' />
+    <nd ref='-102163' />
+    <nd ref='-102147' />
+    <nd ref='-102154' />
+    <nd ref='-102138' />
+    <tag k='code' v='0x28' />
+    <tag k='name' v='0x28 -- Ocean' />
+  </way>
+  <way id='-102647' action='modify' visible='true'>
+    <nd ref='-102136' />
+    <nd ref='-102169' />
+    <nd ref='-102146' />
+    <nd ref='-102148' />
+    <nd ref='-102136' />
+    <tag k='code' v='0x3b' />
+    <tag k='name' v='0x3b -- Blue-Unknown' />
+  </way>
+  <way id='-102648' action='modify' visible='true'>
+    <nd ref='-102166' />
+    <nd ref='-102141' />
+    <nd ref='-102157' />
+    <nd ref='-102172' />
+    <nd ref='-102166' />
+    <tag k='code' v='0x32' />
+    <tag k='name' v='0x32 -- Sea' />
+  </way>
+  <way id='-102649' action='modify' visible='true'>
+    <nd ref='-102153' />
+    <nd ref='-102170' />
+    <nd ref='-102145' />
+    <nd ref='-102161' />
+    <nd ref='-102153' />
+    <tag k='code' v='0x3b' />
+    <tag k='name' v='0x3b -- Blue-Unknown' />
+  </way>
+  <way id='-102650' action='modify' visible='true'>
+    <nd ref='-102149' />
+    <nd ref='-102164' />
+    <nd ref='-102162' />
+    <nd ref='-102151' />
+    <nd ref='-102149' />
+    <tag k='code' v='0x3c' />
+    <tag k='name' v='0x3c -- Lake' />
+  </way>
+  <way id='-102651' action='modify' visible='true'>
+    <nd ref='-102137' />
+    <nd ref='-102139' />
+    <nd ref='-102165' />
+    <nd ref='-102158' />
+    <nd ref='-102137' />
+    <tag k='code' v='0x3d' />
+    <tag k='name' v='0x3d -- Lake' />
+  </way>
+  <way id='-102662' action='modify' visible='true'>
+    <nd ref='-102254' />
+    <nd ref='-102230' />
+    <nd ref='-102247' />
+    <nd ref='-102222' />
+    <nd ref='-102254' />
+    <tag k='code' v='0x3e' />
+    <tag k='name' v='0x3e -- Lake' />
+  </way>
+  <way id='-102663' action='modify' visible='true'>
+    <nd ref='-102235' />
+    <nd ref='-102220' />
+    <nd ref='-102253' />
+    <nd ref='-102224' />
+    <nd ref='-102235' />
+    <tag k='code' v='0x3f' />
+    <tag k='name' v='0x3f -- Lake' />
+  </way>
+  <way id='-102664' action='modify' visible='true'>
+    <nd ref='-102240' />
+    <nd ref='-102232' />
+    <nd ref='-102251' />
+    <nd ref='-102236' />
+    <nd ref='-102240' />
+    <tag k='code' v='0x40' />
+    <tag k='name' v='0x40 -- Lake' />
+  </way>
+  <way id='-102665' action='modify' visible='true'>
+    <nd ref='-102248' />
+    <nd ref='-102223' />
+    <nd ref='-102239' />
+    <nd ref='-102215' />
+    <nd ref='-102248' />
+    <tag k='code' v='0x41' />
+    <tag k='name' v='0x41 -- Lake' />
+  </way>
+  <way id='-102666' action='modify' visible='true'>
+    <nd ref='-102218' />
+    <nd ref='-102243' />
+    <nd ref='-102227' />
+    <nd ref='-102234' />
+    <nd ref='-102218' />
+    <tag k='code' v='0x42' />
+    <tag k='name' v='0x42 -- Lake' />
+  </way>
+  <way id='-102667' action='modify' visible='true'>
+    <nd ref='-102216' />
+    <nd ref='-102249' />
+    <nd ref='-102226' />
+    <nd ref='-102228' />
+    <nd ref='-102216' />
+    <tag k='code' v='0x43' />
+    <tag k='name' v='0x43 -- Lake' />
+  </way>
+  <way id='-102668' action='modify' visible='true'>
+    <nd ref='-102246' />
+    <nd ref='-102221' />
+    <nd ref='-102237' />
+    <nd ref='-102252' />
+    <nd ref='-102246' />
+    <tag k='code' v='0x44' />
+    <tag k='name' v='0x44 -- Lake' />
+  </way>
+  <way id='-102669' action='modify' visible='true'>
+    <nd ref='-102233' />
+    <nd ref='-102250' />
+    <nd ref='-102225' />
+    <nd ref='-102241' />
+    <nd ref='-102233' />
+    <tag k='code' v='0x45' />
+    <tag k='name' v='0x45 -- Blue-Unknown' />
+  </way>
+  <way id='-102670' action='modify' visible='true'>
+    <nd ref='-102229' />
+    <nd ref='-102244' />
+    <nd ref='-102242' />
+    <nd ref='-102231' />
+    <nd ref='-102229' />
+    <tag k='code' v='0x46' />
+    <tag k='name' v='0x46 -- River' />
+  </way>
+  <way id='-102671' action='modify' visible='true'>
+    <nd ref='-102217' />
+    <nd ref='-102219' />
+    <nd ref='-102245' />
+    <nd ref='-102238' />
+    <nd ref='-102217' />
+    <tag k='code' v='0x47' />
+    <tag k='name' v='0x47 -- River' />
+  </way>
+  <way id='-102682' action='modify' visible='true'>
+    <nd ref='-102334' />
+    <nd ref='-102310' />
+    <nd ref='-102327' />
+    <nd ref='-102302' />
+    <nd ref='-102334' />
+    <tag k='code' v='0x48' />
+    <tag k='name' v='0x48 -- River' />
+  </way>
+  <way id='-102683' action='modify' visible='true'>
+    <nd ref='-102315' />
+    <nd ref='-102300' />
+    <nd ref='-102333' />
+    <nd ref='-102304' />
+    <nd ref='-102315' />
+    <tag k='code' v='0x49' />
+    <tag k='name' v='0x49 -- River' />
+  </way>
+  <way id='-102684' action='modify' visible='true'>
+    <nd ref='-102320' />
+    <nd ref='-102312' />
+    <nd ref='-102331' />
+    <nd ref='-102316' />
+    <nd ref='-102320' />
+    <tag k='code' v='0x4b' />
+    <tag k='name' v='0x4b -- Background' />
+  </way>
+  <way id='-102685' action='modify' visible='true'>
+    <nd ref='-102328' />
+    <nd ref='-102303' />
+    <nd ref='-102319' />
+    <nd ref='-102295' />
+    <nd ref='-102328' />
+    <tag k='code' v='0x4c' />
+    <tag k='name' v='0x4c -- Intermittent River/Lake' />
+  </way>
+  <way id='-102686' action='modify' visible='true'>
+    <nd ref='-102298' />
+    <nd ref='-102323' />
+    <nd ref='-102307' />
+    <nd ref='-102314' />
+    <nd ref='-102298' />
+    <tag k='code' v='0x4d' />
+    <tag k='name' v='0x4d -- Glacier' />
+  </way>
+  <way id='-102687' action='modify' visible='true'>
+    <nd ref='-102296' />
+    <nd ref='-102329' />
+    <nd ref='-102306' />
+    <nd ref='-102308' />
+    <nd ref='-102296' />
+    <tag k='code' v='0x4e' />
+    <tag k='name' v='0x4e -- Orchard or plantation' />
+  </way>
+  <way id='-102688' action='modify' visible='true'>
+    <nd ref='-102326' />
+    <nd ref='-102301' />
+    <nd ref='-102317' />
+    <nd ref='-102332' />
+    <nd ref='-102326' />
+    <tag k='code' v='0x4f' />
+    <tag k='name' v='0x4f -- Scrub' />
+  </way>
+  <way id='-102689' action='modify' visible='true'>
+    <nd ref='-102313' />
+    <nd ref='-102330' />
+    <nd ref='-102305' />
+    <nd ref='-102321' />
+    <nd ref='-102313' />
+    <tag k='code' v='0x50' />
+    <tag k='name' v='0x50 -- Woods' />
+  </way>
+  <way id='-102690' action='modify' visible='true'>
+    <nd ref='-102309' />
+    <nd ref='-102324' />
+    <nd ref='-102322' />
+    <nd ref='-102311' />
+    <nd ref='-102309' />
+    <tag k='code' v='0x51' />
+    <tag k='name' v='0x51 -- Wetland' />
+  </way>
+  <way id='-102691' action='modify' visible='true'>
+    <nd ref='-102297' />
+    <nd ref='-102299' />
+    <nd ref='-102325' />
+    <nd ref='-102318' />
+    <nd ref='-102297' />
+    <tag k='code' v='0x52' />
+    <tag k='name' v='0x52 -- Tundra' />
+  </way>
+  <way id='-102696' action='modify' visible='true'>
+    <nd ref='-102349' />
+    <nd ref='-102350' />
+    <nd ref='-102348' />
+    <nd ref='-102351' />
+    <nd ref='-102349' />
+    <tag k='code' v='0x53' />
+    <tag k='name' v='0x53 -- Flats' />
+  </way>
+</osm>
