@@ -1,9 +1,8 @@
 family-id: 980
 product-id: 1
-series-name: Test Main City Of China
-family-name: Test Main City Of China
-area-name: Test Main City Of China
-max-jobs=4
+series-name: OSM
+family-name: OSM
+area-name: OSM
 location-autofill:is_in,nearest
 country-name=China
 country-abbr=CHN
@@ -12,7 +11,7 @@ add-pois-to-lines
 name-tag-list: name:zh,name,place_name
 generate-sea: land-tag=natural=background
 draw-priority:25
-code-page=65001
+code-page=936
 tdbfile
 index
 process-destination
@@ -20,10 +19,10 @@ route
 remove-short-arcs
 adjust-turn-headings:3
 drive-on-right
-reduce-point-density-polygon:2.5
+reduce-point-density-polygon:3
 merge-lines
-min-size-polygon: 2.5
-polygon-size-limits=17:2, 15:0
+min-size-polygon: 4
+polygon-size-limits=24:12, 18:10, 16:8, 14:4, 12:2, 11:0
 link-pois-to-ways
 make-opposite-cycleways
 preserve-element-order
@@ -41,10 +40,9 @@ check-styles
 # If the number of tiles changes, you will need to update this section using template.args that is created by splitter
 # All GCC basemap tiles start at 63247001
 
-#overview-mapname: hangzhou_overview
-#overview-mapnumber: 63240001
+#overview-mapname: overview
+#overview-mapnumber: 63240002
 #Set name of overview file used when installing in MapSource
-
 mapname: 63240001
-# description: OSM Map
-input-file: ../splitted/63240001.osm.pbf
+description: CN-Hangzhou
+input-file: splitted/63240001.osm.pbf
