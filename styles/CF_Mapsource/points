@@ -23,16 +23,15 @@ addr:country=ZA {set mkgmap:region='South Africa'}
 addr:country=ES {set mkgmap:region='Spain'}
 addr:country=AE {set mkgmap:region='United Arab Emirates'}
 addr:country=UK {set mkgmap:region='United Kingdom'}
-addr:country=CHN {set mkgmap:region='China'}
 
 # new rules for latest versions of mkgmap
-mkgmap:region!=* & is_in:county=* { set mkgmap:region='${is_in:county}' }
+mkgmap:region!=* & is_in:county=* { set mkgmap:region='${is_in:county}' } 
 mkgmap:country!=* & addr:country=* { set mkgmap:country='${addr:country}' }
 mkgmap:country!=* & is_in:country=* { set mkgmap:country='${is_in:country}' }
 mkgmap:city!=* & is_in:city=* { set mkgmap:city='${is_in:city}' }
 mkgmap:city!=* & addr:city=* { set mkgmap:city='${addr:city}' }
-mkgmap:postal_code!=* & mkgmap:postcode=* { set mkgmap:postal_code='${mkgmap:postcode}' }
-mkgmap:postal_code!=* & addr:postcode=* { set mkgmap:postal_code='${addr:postcode}' }
+mkgmap:postal_code!=* & mkgmap:postcode=* { set mkgmap:postal_code='${mkgmap:postcode}' } 
+mkgmap:postal_code!=* & addr:postcode=* { set mkgmap:postal_code='${addr:postcode}' } 
 mkgmap:street!=* & addr:street=* { set mkgmap:street='${addr:street}' }
 mkgmap:street!=* & addr:housename=* { set mkgmap:street='${addr:housename}' }
 mkgmap:housenumber!=* & addr:housenumber=* { set mkgmap:housenumber='${addr:housenumber}' }
@@ -51,7 +50,7 @@ addr:full=* {set addr:housename='${addr:full}'; delete addr:street; delete addr:
 # ------------------------------------------------
 # AIR
 # ------------------------------------------------
-aeroway=airport 						[0x2f04 resolution 20]
+aeroway=airport 						[0x2f04 resolution 20] 
 aeroway=aerodrome | aeroway=terminal 	[0x2f04 resolution 22]
 aeroway=helipad							[0x5904 resolution 23]
 
@@ -176,7 +175,7 @@ man_made=water_tower 			[0x640a resolution 22]
 man_made=survey_point {name '${name}: ${ele}m' | 'Survey point: ${ele}m'} [0x640f resolution 23]
 man_made=tower 					[0x6411 resolution 23]
 man_made=windmill 				[0x6418 resolution 22]
-man_made=observatory 			[0x6413 resolution 23]
+man_made=observatory 			[0x6413 resolution 23] 
 
 # ------------------------------------------------
 # MAN-MADE FEATURES - HISTORICAL
@@ -217,9 +216,9 @@ natural=channel & name=*													[0x1e00 resolution 20]
 #land-based
 natural=beach & name=*														[0x6604 resolution 23]
 natural=cave_entrance 														[0x6608 resolution 23]
-natural=peak & ele ~'[\d\s]*m' {name '${name} (${ele})' | 'Peak (${ele})'} 	[0x6616 resolution 20]
+natural=peak & ele ~'[\d\s]*m' {name '${name} (${ele})' | 'Peak (${ele})'} 	[0x6616 resolution 20] 
 natural=peak & ele ~'[\d\s]*ft' {name '${name} (${ele})'| 'Peak (${ele})'} 	[0x6616 resolution 20]
-natural=peak {name '${name} (${ele}m)' | 'Peak (${ele}m)' | '${name}' } 	[0x6616 resolution 20]
+natural=peak {name '${name} (${ele}m)' | 'Peak (${ele}m)' | '${name}' } 	[0x6616 resolution 20] 
 natural=volcano 															[0x6616 resolution 20 default_name 'Volcano']
 natural=tree & name=*														[0x6618 resolution 23]
 natural=forest & name=*														[0x660a resolution 23]
@@ -230,7 +229,7 @@ natural=oasis																[0x650f resolution 22 default_name 'Oasis']
 # ------------------------------------------------
 # PLACES
 # ------------------------------------------------
-#place=capitol | place=capital | capital=yes			[0x0101 resolution 16]
+place=capitol | place=capital | capital=yes			[0x0101 resolution 16]
 place=city											[0x0200 resolution 16]
 place=town											[0x0800 resolution 23-18 continue]
 place=town											[0x0900 resolution 24]
@@ -240,7 +239,7 @@ place=hamlet										[0x0d00 resolution 23-20 continue]
 place=hamlet										[0x0e00 resolution 24]
 
 place=country										[0x1400 resolution 12]
-place=region & population > 1000000 				[0x1400 resolution 16]
+place=region & population > 1000000 				[0x1400 resolution 16] 
 place=state 										[0x1400 resolution 16]
 place=county & population > 500000 					[0x1400 resolution 16]
 place=island & name =* & mkgmap:line2poi!=true		[0x650c resolution 18]
@@ -266,7 +265,7 @@ shop=chemist | amenity=pharmacy						[0x2e05 resolution 23 default_name 'Chemist
 shop=clothes | shop=outdoor 						[0x2e07 resolution 23]
 shop=hardware | shop=doityourself					[0x2e08 resolution 23]
 shop=furniture										[0x2e09 resolution 23]
-shop=butcher 										[0x2e0a resolution 23]
+shop=butcher 										[0x2e0a resolution 23] 
 shop=alcohol | shop=beverages 						[0x2e0c resolution 23 default_name 'Booze']
 shop=books 											[0x2e0d resolution 23]
 shop=bakery | shop=bakers | shop=baker				[0x2e0e resolution 23]

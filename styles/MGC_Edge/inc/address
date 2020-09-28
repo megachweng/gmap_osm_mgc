@@ -1,0 +1,30 @@
+mkgmap:country!=* & mkgmap:admin_level2=* { set mkgmap:country='${mkgmap:admin_level2}' }
+mkgmap:country!=* & addr:country=* { set mkgmap:country='${addr:country}' }
+mkgmap:country!=* & is_in:country=* { set mkgmap:country='${is_in:country}' }
+mkgmap:region!=* & mkgmap:admin_level4=* { set mkgmap:region='${mkgmap:admin_level4}' }
+mkgmap:region!=* & mkgmap:admin_level5=* { set mkgmap:region='${mkgmap:admin_level5}' }
+mkgmap:region!=* & mkgmap:admin_level6=* { set mkgmap:region='${mkgmap:admin_level6}' }
+mkgmap:region!=* & is_in:county=* { set mkgmap:region='${is_in:county}' }
+
+# common rules for all the rest of countries
+mkgmap:city!=* & mkgmap:admin_level8=* { set mkgmap:city='${mkgmap:admin_level8}' }
+mkgmap:city!=* & mkgmap:admin_level9=* { set mkgmap:city='${mkgmap:admin_level9}' }
+mkgmap:city!=* & mkgmap:admin_level10=* { set mkgmap:city='${mkgmap:admin_level10}' }
+mkgmap:city!=* & is_in:city=* { set mkgmap:city='${is_in:city}' }
+mkgmap:city!=* & addr:city=* { set mkgmap:city='${addr:city}' }
+
+mkgmap:postal_code!=* & mkgmap:postcode=* { set mkgmap:postal_code='${mkgmap:postcode}' }
+mkgmap:postal_code!=* & addr:postcode=* { set mkgmap:postal_code='${addr:postcode}' }
+
+mkgmap:street!=* & addr:street=* { set mkgmap:street='${addr:street}' }
+mkgmap:street!=* & addr:housename=* { set mkgmap:street='${addr:housename}' }
+
+mkgmap:phone!=* & phone=* { set mkgmap:phone='${phone}' }
+mkgmap:is_in!=* & is_in=* { set mkgmap:is_in='${is_in}' }
+
+mkgmap:housenumber!=* & addr:housenumber=* { set mkgmap:housenumber='${addr:housenumber}' }
+addr:housename=* & addr:street=* {set addr:street= '${addr:housename}, ${addr:street}'}
+addr:full=* {set addr:housename='${addr:full}'; delete addr:street; delete addr:city; delete addr:housenumber}
+
+# use name:zh in CHN
+name=* & mkgmap:country=CHN {name '${name:zh}' | '${name}'}

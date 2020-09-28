@@ -1,7 +1,7 @@
 mkgmap="bin/mkgmap-r4581/mkgmap.jar"
 stylefile="styles/MGC_Edge"
 optionsFile="mgc.args"
-typfile="typ/MGC_Edge.TYP"
+typfile="typ/MGC_Edge.typ"
 resources_dir="resources"
 outdir="product"
 
@@ -16,3 +16,5 @@ java -DLog.config=logging.properties -Xmx10g -ea -jar $mkgmap \
   --precomp-sea=$resources_dir/sea \
   -c $optionsFile \
   $typfile
+
+
